@@ -14,7 +14,7 @@ function setup(item) {
 
 
     var ref = db.ref('Usuario');
-    ref.push({
+    var key = ref.push({
         nombre: item[1].value,
         sexo: item[2].value,
         edad: item[3].value,
@@ -33,13 +33,16 @@ function setup(item) {
         enfermedades: item[16].value,
         alergias: item[17].value,
         tratamiento: item[18].value
-    },finished);
+    },finished).key;
 
+    document.getElementById('qr').innerHTML = create_qrcode("localhost:3000");
+    
     function finished(error){
         if(error){
             document.getElementById("parrafo").innerHTML = "ha ocurrido un error";
         } else {
-            window.location.replace("succes.html");
+            document.getElementById("parrafo").innerHTML = "se ha registrado\n este es el QR";
+
 
         }
     }

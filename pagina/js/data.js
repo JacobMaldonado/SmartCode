@@ -5,6 +5,5 @@ function submit() {
         text += el.elements[i].value + "<br>";
     }
     if(setup(el.elements)){
-        document.getElementById("parrafo").innerHTML = text;
     }
 }
