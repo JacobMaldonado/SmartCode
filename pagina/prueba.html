@@ -1,0 +1,246 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Material Design Lite</title>
+
+    <script src="js/queryFirebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+
+    <script src="js/data.js"></script>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+
+    </style>
+    <style>
+        /* Determina los div's que el contenido es centrado. Hereda "clear: both;" */
+
+        .form_center {
+            text-align: center;
+        }
+
+        /* Para los input's alineados */
+
+        .form_input_align {
+            float: left;
+            border: 1px solid;
+            margin-left: 0.2em;
+        }
+
+        /* Para los input's centrados */
+
+        .form_input_center {
+            border: 1px solid;
+        }
+
+        /* Para los label's alineados */
+
+        .form_label_align {
+            float: left;
+            width: 50%;
+            text-align: right;
+        }
+
+        /* indicamos una pequeña separación en cada label, input, select y textarea */
+
+        label,
+        input,
+        select,
+        textarea {
+            margin-bottom: 0.3em;
+        }
+
+        /* Unicamente funciona con Firefox
+   Determina el formato cuando se selecciona un cuadro de texto */
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            background-color: #c6d3ff;
+        }
+
+        /* Determina el formato de los comentarios */
+
+        .form_comment {
+            color: #808080;
+        }
+
+        /* Determina el formato de los comentarios centrados */
+
+        .form_comment_center {
+            text-align: center;
+            color: #808080;
+        }
+
+        /* Determina el formato de los botones */
+
+        .button {
+            padding: 0em 0.5em 0em 0.5em;
+        }
+
+        /* Determina el formato del marco */
+
+        fieldset {
+            border: 1px solid #808080;
+            padding: 0.5em 0.5em 0.5em 0.5em;
+        }
+
+        /* Determina el formato del titulo del marco */
+
+        legend {
+            color: #808080;
+        }
+
+    </style>
+</head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            <h3>SmartCode</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <a href="index.html" class="mdl-layout__tab is-active">Inicio</a>
+            <a href="prueba.html" class="mdl-layout__tab">Registro</a>
+            <a href="#registro" class="mdl-layout__tab">Consulta</a>
+             <a href="localhost:3000" class=mdl-layout__tab></a>
+
+        </div>
+    </header>
+    <div class="mdl-layout__tab-panel is-active" id="inicio">
+
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__supporting-text">
+
+                    <center>
+                        <form id="frm1" action="" method="post">
+                            <!-- generamos un recuadro -->
+                            <fieldset>
+                                <!-- titulo del recuadro -->
+                                <legend>REGISTRO</legend>
+                            
+                                <!-- desde aqui se muestra el contenido alineado -->
+                            
+                                <!-- Mostremos un comentario o descripción -->
+                                <h4>DATOS GENERALES</h4>
+                            
+                                <!-- Mostramos un cuadro de texto para soliciar el nombre -->
+                                <div><label for='idname' class='form_label_align'>Nombre:</label> <input type="text" id='idname' name='name' class='form_input_align' title="Introduce tu nombre aqui" /></div>
+                            
+                                <div><label for='Sexo' class='form_label_align'>Sexo :</label>
+                                    <select id='idsexo' name='sexo' class='form_input_align' title='Selecciona una opción'>
+				<option value=''>Seleccionar ...</option>
+				
+					<option value='A'>Masculino</option>
+					<option value='B'>Femenino </option>
+				
+			</select>
+                                </div>
+
+                                <div><label for='idedad' class='form_label_align'>Edad:</label> <input type="text" id='idedad' name='edad' class='form_input_align' title="Introduce tu edad aqui" /></div>
+                            
+                                <div><label for='idcurp' class='form_label_align'>Curp:</label> <input type="text" id='idcurp' name='curp' class='form_input_align' title="Introduce tu curp aqui" /></div>
+                                <div><label forine='idine' class='form_label_align'>INE:</label> <input type="text" id='idine' name='ine' class='form_input_align' title="Introduce tu ine aqui" /></div>
+                                <div><label for='idnacionalidad' class='form_label_align'>Nacionalidad:</label> <input type="text" id='idcacionalidad' name='nacionalidad' class='form_input_align' title="Introduce tu nacinalidad aqui" /></div>
+                            
+                                <div><label for='idestado' class='form_label_align'>Estado:</label> <input type="text" id='idestado' name='estado' class='form_input_align' title="Introduce tu estado aqui" /></div>
+                            
+                                <div><label for='idmunicipio' class='form_label_align'>Municipio:</label> <input type="text" id='municipio' name='municipio' class='form_input_align' title="Introduce tu municipio aqui" /></div>
+                            
+                                <div><label for='idcalle' class='form_label_align'>Calle:</label> <input type="text" id='idcalle' name='calle' class='form_input_align' title="Introduce tu calle aqui" /></div>
+                            
+                                <div><label for='idnumero' class='form_label_align'>Numero:</label> <input type="text" id='idname' name='numero' class='form_input_align' title="Introduce tu numero aqui" /></div>
+                            
+                                <div><label for='idcolonia' class='form_label_align'>colonia:</label> <input type="text" id='idcolonia' name='colonia' class='form_input_align' title="Introduce tu colonia aqui" /></div>
+                            
+                                <div><label for='idtelefono' class='form_label_align'>Telefono:</label> <input type="text" id='idtelefono' name='telefono' class='form_input_align' title="Introduce tu telefono aqui" /></div>
+
+
+
+                                <h4>DATOS MEDICOS</h4>
+                                <!-- textarea -->
+                                <div class='form_center'><span>Historial medico</span><br /><textarea name='text2' rows='5' cols='50' class='form_input_center'></textarea></div>
+                            
+                                <div><label for='idnsegsocial' class='form_label_align'>NO. Seguro Social:</label> <input type="text" id='idnsegsocial' name='nsegsocial' class='form_input_align' title="Introduce tu nsegsocial aqui" /></div>
+                                <div><label for='idtsangre' class='form_label_align'>T. Sangre:</label> <input type="text" id='idtsangre' name='tsangre' class='form_input_align' title="Introduce tu tsangre aqui" /></div>
+                                <div><label for='idenfermedades' class='form_label_align'>Enfermedades:</label> <input type="text" id='idenfermedades' name='enfermedades' class='form_input_align' title="Introduce tu enfermedad aqui" /></div>
+                                <div><label for='idtalergias' class='form_label_align'>Alergias:</label> <input type="text" id='idalergias' name='alergias' class='form_input_align' title="Introduce tu alergia aqui" /></div>
+                                <!-- textarea -->
+                                <div class='form_center'><span>Tratamiento</span><br /><textarea name='text3' rows='5' cols='50' class='form_input_center'></textarea></div>
+                            
+
+                            </fieldset>
+                        </form>
+                        <button type="button" onClick="submit()">daleclick</button>
+                        <p id="parrafo"></p>
+                    </center>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</body>
+
+</html>
